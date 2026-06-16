@@ -30,8 +30,8 @@ app = FastAPI(title="Blog Lcuiano Di Pietro")
 
 # Montar carpeta estática
 os.makedirs("static", exist_ok=True)
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
+#app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/44189406/static", StaticFiles(directory="44189406/static"), name="static")
 # Incluir las rutas separadas
 app.include_router(entrada_ep.router)
 app.include_router(login_ep.router)
@@ -40,3 +40,10 @@ app.include_router(login_ep.router)
 @app.get("/")
 def leer_index():
     return FileResponse("index.html")
+
+# Configuramos la ruta para que responda con o sin barra final
+@app.get("/44189406")
+@app.get("/44189406/")
+def leer_index_dni():
+    # FastAPI va a buscar el HTML adentro de la nueva carpeta
+    return FileResponse("44189406/index.html")

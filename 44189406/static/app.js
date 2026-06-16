@@ -24,10 +24,10 @@ function ModalLogin({ isOpen, onClose, onLogin, user, setUser, pass, setPass }) 
 // ==========================================
 // COMPONENTE 2: PERFIL DE USUARIO
 // ==========================================
-function PerfilUsuario() {
+function PerfilUsuario(){
     return (
         <div className="header-profile">
-            <img src="/static/perfil.jpeg" alt="Luciano" className="profile-img" />
+            <img src="/44189406/static/perfil.jpeg" alt="Luciano" className="profile-img" />
             <div className="profile-info">
                 <h1 style={{ margin: '0 0 5px 0', color: '#ce9178' }}>Luciano Di Pietro</h1>
                 <p style={{ fontWeight: '500', margin: '5px 0' }}>Estudiante de Ingeniería en Sistemas de Información | UTN FRT</p>
@@ -64,7 +64,7 @@ function Blog() {
     const [showLogin, setShowLogin] = React.useState(false); 
 
     React.useEffect(() => {
-        fetch("/api/entradas")
+        fetch("/44189406/api/entradas")
             .then(res => res.json())
             .then(data => setPosts(data));
     }, []);
@@ -75,7 +75,7 @@ function Blog() {
         formData.append("username", username);
         formData.append("password", password);
 
-        const res = await fetch("/api/login", {
+        const res = await fetch("/44189406/api/login", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: formData
@@ -101,7 +101,7 @@ function Blog() {
         e.preventDefault();
         if(!titulo || !contenido) return;
 
-        const res = await fetch("/api/entradas", {
+        const res = await fetch("/44189406/api/entradas", {
             method: "POST",
             headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
             body: JSON.stringify({ titulo, contenido })
@@ -127,7 +127,7 @@ function Blog() {
         <div>
             {/* NUEVA BARRA SUPERIOR ABSOLUTA */}
             <div className="top-bar">
-                <a href="/static/informe-tpf.pdf" className="btn-top btn-pdf" target="_blank">📄 PDF Informe TPF</a>
+                <a href="/44189406/static/informe-tpf.pdf" className="btn-top btn-pdf" target="_blank">📄 PDF Informe TPF</a>
                 
                 {token ? (
                     <button onClick={cerrarSesion} className="btn-top btn-logout">Cerrar Sesión</button>
