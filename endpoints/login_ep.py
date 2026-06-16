@@ -10,7 +10,7 @@ import auth
 router = APIRouter()
 
 # Endpoint de Login profesional utilizando el estándar OAuth2
-@router.post("/api/login")
+@router.post("/44189406/api/login")
 def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
     user = db.query(usuario.Usuario).filter(usuario.Usuario.username == form_data.username).first()
     if not user or user.hashed_password != auth.funcion_hash(form_data.password):
