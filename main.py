@@ -4,7 +4,7 @@ from fastapi.staticfiles import StaticFiles
 import os
 from dotenv import load_dotenv
 from database import engine, Base,SessionLocal
-from endpoints import entrada_ep, login_ep
+from endpoints import entrada_ep, login_ep, file_response_ep
 from domain import usuario
 import auth
 
@@ -26,7 +26,7 @@ if not usuario_existe:
     db.commit()
 db.close()
 
-app = FastAPI(title="Blog Lcuiano Di Pietro")
+app = FastAPI(title="Blog Luciano Di Pietro")
 
 # Montar carpeta estática
 os.makedirs("static", exist_ok=True)
@@ -35,6 +35,7 @@ app.mount("/44189406/static", StaticFiles(directory="44189406/static"), name="st
 # Incluir las rutas separadas
 app.include_router(entrada_ep.router)
 app.include_router(login_ep.router)
+app.include_router(file_response_ep.router)
 
 # Ruta del frontend
 @app.get("/")
@@ -47,3 +48,4 @@ def leer_index():
 def leer_index_dni():
     # FastAPI va a buscar el HTML adentro de la nueva carpeta
     return FileResponse("44189406/index.html")
+

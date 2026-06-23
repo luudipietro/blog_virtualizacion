@@ -237,17 +237,18 @@ a.btn {
         function PerfilUsuario() {
             return (
                 <div className="header-profile">
-                    <img src="/44189406/static/perfil.jpeg" alt="Luciano" className="profile-img" />
+                    <img src="/44189406/api/foto" alt="Luciano" className="profile-img" />
                     <div className="profile-info">
                         <h1 style={{ margin: '0 0 5px 0', color: '#ce9178' }}>Luciano Di Pietro</h1>
-                        <p style={{ fontWeight: '500', margin: '5px 0' }}>Estudiante de Ingeniería en Sistemas de Información | UTN FRT</p>
-                        <p style={{ color: '#9cdcfe', fontSize: '0.95rem' }}>Intereses: Desarrollo Backend (Python/FastAPI), Tecnologías AgTech, Análisis y Ciencia de Datos.</p>
+                        <p style={{ fontWeight: '500', margin: '20px 0' }}>Estudiante de Ingeniería en Sistemas de Información | UTN FRT</p>
+                        <p style={{ fontWeight: '400', margin: '20px 0' }}>Sobre mi: Soy un jóven argentino de 23 años, proactivo y responsable. Estoy finalizando la carrera de ingeniería en sistemas de información. Soy un apasionado de la tecnología y la programación. En mi vida personal me gusta jugar al futbol, tocar la guitarra o pasar tiempo con mi familia y amigos.</p>
+                        <p style={{ color: '#9cdcfe', fontSize: '0.95rem' }}>Intereses: Desarrollo Backend (Python/FastAPI), Análisis y Ciencia de Datos.</p>
                         
                         <div className="badges-container">
-                            <a href="mailto:tu-correo@gmail.com" className="badge">
+                            <a href="mailto:lucianodipi12@gmail.com" className="badge">
                                 <span>📧</span> Email
                             </a>
-                            <a href="https://linkedin.com/in/tu-perfil" target="_blank" className="badge">
+                            <a href="https://linkedin.com/in/luciano-di-pietro" target="_blank" className="badge">
                                 <span>💼</span> LinkedIn
                             </a>
                         </div>
@@ -329,7 +330,7 @@ a.btn {
             return (
                 <div>
                     <div className="top-bar">
-                        <a href="/44189406/tpf.pdf" className="btn-top btn-pdf" target="_blank">📄 PDF Informe TPF</a>
+                        <a href="/44189406/api/tpf" className="btn-top btn-pdf" target="_blank">📄 PDF Informe TPF</a>
                         
                         {token ? (
                             <button onClick={cerrarSesion} className="btn-top btn-logout">Cerrar Sesión</button>
